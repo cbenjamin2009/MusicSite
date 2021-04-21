@@ -1,0 +1,90 @@
+.home-main-section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-grow: 1;
+
+}
+
+.home-main-section .img-wrapper {
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+/* Set background image location and max size, min width, and position */
+.home-main-section .lady-image{    
+    background-image: url(images/landing-page-girl.png);
+    flex-grow: 1;
+    max-height: 70vh;
+    min-width: 30vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+/* set text content column to be flex, column, and centered*/
+.home-main-section .call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    align-self: center;
+}
+
+/* remove image if page width becomes to lexx than 900px using media query to change property */
+@media (max-width: 900px){
+    .home-main-section .img-wrapper {
+        display: none;
+    }
+
+    .home-main-section {
+        justify-content: center;
+    }
+}
+
+/* set bottom left circle on index page as round element and set z-index-1 to be behind other elements */
+.home-page-circle-1 {
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    bottom: 5vw;
+    left: 5vw;
+    background-color: rgba(188, 58, 128, .1);
+    z-index: -1;
+}
+
+.home-page-circle-2 {
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    top: 15vw;
+    left: 30vw;
+    background-color: rgba(52, 87, 178, .1);
+    z-index: -1;
+}
+
+.home-page-circle-3 {
+    position: absolute;
+    overflow: hidden;
+    width: 45vw;
+    height: 45vw;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+/* set as ::before to allow it to overflow and remain off-screen */
+.home-page-circle-3::before {
+    content: '';
+    transform: translate(40%, 40%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba(52, 87, 178, .1);
+
+}
